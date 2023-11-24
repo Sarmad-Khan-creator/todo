@@ -1,0 +1,27 @@
+header {
+  width: 25rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  left: 37%;
+  bottom: 25%;
+  margin-bottom: 2rem;
+}
+
+header > h1 {
+  color: white;
+  letter-spacing: 0.5rem;
+}
+
+.change-theme-icon {
+  object-fit: contain;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 375px) {
+  header {
+    width: 90%;
+    left: 5%;
+    margin-bottom: 3rem;
+  }
+}

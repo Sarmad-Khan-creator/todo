@@ -1,0 +1,24 @@
+.action-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-block-start: 0.8rem;
+    padding-inline: 0.8rem;
+}
+
+.action-buttons > p {
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.actions {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.custom-button {
+    font-size: 0.7rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: transparent;
+}

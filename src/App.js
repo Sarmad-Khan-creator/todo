@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/Header/Header";
+import Input from "./components/Input/Input";
+import Tasks from "./components/Tasks/Tasks";
+import backgroundDark from "./assets/bg-desktop-dark.jpg";
+import backgroundLight from "./assets/bg-desktop-light.jpg";
+import mobileBackgroundDark from "./assets/bg-mobile-dark.jpg";
+import mobileBackgroundLight from "./assets/bg-mobile-light.jpg";
+import { Todo } from "./store/todo-app-context";
+import { useContext } from "react";
 
 function App() {
+  const x = window.matchMedia("(max-width: 375px)");
+  const { theme } = useContext(Todo);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${theme === "dark" ? "dark" : "light"}`}>
+      <img
+        src={
+          theme === "dark"
+            ? !x.matches
+              ? backgroundDark
+              : mobileBackgroundDark
+            : !x.matches
+            ? backgroundLight
+            : mobileBackgroundLight
+        }
+        alt="background"
+        className="background-image"
+      />
+      <Header />
+      <Input />
+      <Tasks />
     </div>
   );
 }
